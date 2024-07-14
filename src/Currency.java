@@ -1,39 +1,30 @@
+import java.util.Map;
+
 public class Currency {
-    private String name;
-    private String country;
-    private String symbol;
+    private String base;
+    private Map<String, Double> conversion_rates;
 
-    // Getters y Setters
-    public String getName() {
-        return name;
+    public String getBase() {
+        return base;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBase(String base) {
+        this.base = base;
     }
 
-    public String getCountry() {
-        return country;
+    public Map<String, Double> getConversionRates() {
+        return conversion_rates;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public void setConversionRates(Map<String, Double> conversion_rates) {
+        this.conversion_rates = conversion_rates;
     }
 
     @Override
     public String toString() {
         return "Currency{" +
-                "name='" + name + '\'' +
-                ", country='" + country + '\'' +
-                ", symbol='" + symbol + '\'' +
+                "base='" + base + '\'' +
+                ", conversion_rates=" + conversion_rates +
                 '}';
     }
 }

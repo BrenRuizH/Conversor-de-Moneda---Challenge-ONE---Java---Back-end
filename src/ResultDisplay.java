@@ -1,7 +1,7 @@
-import java.util.List;
+import java.util.Map;
 
 public class ResultDisplay {
-    public static void displayCurrencies(List<Currency> currencies) {
-        currencies.forEach(currency -> System.out.println(currency.toString()));
+    public static void displayCurrencies(Map<String, Double> rates) {
+        rates.forEach((currency, rate) -> System.out.println(currency + ": " + rate));
     }
 }

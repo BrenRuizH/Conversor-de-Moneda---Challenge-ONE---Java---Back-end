@@ -1,10 +1,11 @@
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CurrencyFilter {
-    public static List<Currency> filterCurrencies(List<Currency> currencies, String criteria) {
-        return currencies.stream()
-                .filter(currency -> currency.getName().contains(criteria))
-                .collect(Collectors.toList());
+    public static Map<String, Double> filterCurrencies(Map<String, Double> rates, String... currencies) {
+        return rates.entrySet().stream()
+                .filter(entry -> List.of(currencies).contains(entry.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 }
